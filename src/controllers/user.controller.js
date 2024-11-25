@@ -116,7 +116,6 @@ httpOnly: true ,
 secure: true,
 sameSite: 'none',
 domain: 'clipbuzz-backend.onrender.com',
-...
 }
 
     return res 
