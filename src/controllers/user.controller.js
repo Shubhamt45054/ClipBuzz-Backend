@@ -152,10 +152,12 @@ const logoutUser = asyncHandler(async(req, res) => {
         }
     )
 
-    const options = {
-        httpOnly: true,
-        secure: true
-    }
+     const options = {
+httpOnly: true ,
+secure: true,
+sameSite: 'none',
+domain: 'clipbuzz-backend.onrender.com',
+}
 
     return res
     .status(200)
@@ -189,10 +191,12 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
             
         }
     
-        const options = {
-            httpOnly: true,
-            secure: true
-        }
+          const options = {
+httpOnly: true ,
+secure: true,
+sameSite: 'none',
+domain: 'clipbuzz-backend.onrender.com',
+}
     
         const {accessToken, newRefreshToken} = await generateAccessAndRefereshTokens(user._id)
     
