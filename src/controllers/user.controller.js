@@ -112,10 +112,12 @@ const loginUser = asyncHandler(async (req, res) =>{
     const loggedInUser = await User.findById(user._id).select("-password -refreshToken")
 
     const options = {
-  
-        httpOnly: true,
-        secure: true
-    }
+httpOnly: true ,
+secure: true,
+sameSite: 'none',
+domain: 'clipbuzz-backend.onrender.com',
+...
+}
 
     return res 
     .status(200)
