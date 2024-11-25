@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser"
 const app = express();
 
 app.use(cors({
-    origin : [process.env.CORS_ORIGIN,"https://clip-buzz-frontend-nkvx.vercel.app"],
+    origin : ["https://clipbuzz-frontend.onrender.com","https://clip-buzz-frontend-nkvx.vercel.app"],
      credentials:true,
 }))
 
