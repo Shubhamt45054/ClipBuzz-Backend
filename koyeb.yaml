@@ -1,0 +1,23 @@
+name: clipbuzz-backend
+services:
+  - name: clipbuzz-backend
+    instance_type: nano
+    ports:
+      - port: 5000
+        protocol: http
+    env:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "5000"
+    git:
+      branch: main
+      repository: https://github.com/Shubhamt45054/ClipBuzz-Backend
+    dockerfile: |
+      FROM node:18-alpine
+      WORKDIR /app
+      COPY package*.json ./
+      RUN npm install
+      COPY . .
+      EXPOSE 5000
+      CMD ["npm", "start"] 
